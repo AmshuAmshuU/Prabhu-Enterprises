@@ -11,6 +11,7 @@ import {
   IconButton,
   List,
   ListItem,
+  ListItemButton,
   ListItemText,
 } from "@mui/material";
 import styles from "../../styles/navbar.module.css";
@@ -58,14 +59,14 @@ const Navbar = () => {
           </div>
           <List>
             {navbarPages.map((pages, index) => (
-              <ListItem
-                button
-                key={index}
-                component="a"
-                href={pages.path}
-                onClick={toggleDrawer(false)}
-              >
-                <ListItemText primary={pages.name} />
+              <ListItem key={index} disablePadding>
+                <ListItemButton
+                  component="a"
+                  href={pages.path}
+                  onClick={toggleDrawer(false)}
+                >
+                  <ListItemText primary={pages.name} />
+                </ListItemButton>
               </ListItem>
             ))}
           </List>
