@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
       >
         <ThemeRegistry>
           <Navbar />
-          {children}
+          <section style={{ minHeight: "90vh" }}>{children}</section>
           <Footer />
         </ThemeRegistry>
       </body>
