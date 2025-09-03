@@ -17,14 +17,19 @@ const LogoSection = () => {
   return (
     <Box sx={{ bgcolor: "#1c1c1c", py: 4 }}>
       <Container maxWidth="lg">
-        <Grid container spacing={16} alignItems="center" justifyContent="center">
+        <Grid
+          container
+          spacing={{ xs: 2, sm: 4, md: 6 }} // responsive spacing
+          alignItems="center"
+          justifyContent="center"
+        >
           {logos.map((logo, index) => (
             <Grid
               item
               key={index}
-              xs={6}
-              sm={4}
-              md={2}
+              xs={6}   // 2 logos per row on mobile
+              sm={4}   // 3 logos per row on tablets
+              md={2}   // 5 logos per row on desktop
               sx={{ display: "flex", justifyContent: "center" }}
             >
               <Image
@@ -37,6 +42,8 @@ const LogoSection = () => {
                   opacity: 0.8,
                   transition: "0.3s",
                   cursor: "pointer",
+                  maxWidth: "100%", // keeps image inside grid
+                  height: "auto",
                 }}
                 onMouseOver={(e) => {
                   e.currentTarget.style.filter = "grayscale(0%)";
