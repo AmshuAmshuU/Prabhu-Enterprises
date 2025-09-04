@@ -19,7 +19,7 @@ const LogoSection = () => {
       <Container maxWidth="lg">
         <Grid
           container
-          spacing={{ xs: 2, sm: 4, md: 6 }} // responsive spacing
+          spacing={{ xs: 2, sm: 4, md: 10 }} // responsive spacing
           alignItems="center"
           justifyContent="center"
         >

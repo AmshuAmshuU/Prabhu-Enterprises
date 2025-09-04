@@ -5,15 +5,18 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { FaStar, FaRegStar } from "react-icons/fa";
 import Image from "next/image";
 
-// 👉 Import images directly from assets
+// 👉 Import profile images
 import person1 from "../../assets/Images/profile.png";
 import person2 from "../../assets/Images/profile.png";
 import person3 from "../../assets/Images/profile.png";
 import person4 from "../../assets/Images/profile.png";
 import person5 from "../../assets/Images/profile.png";
+
+// 👉 Import star icons
+import starFilled from "../../assets/icons/starticon.png";
+import starOutline from "../../assets/icons/staricon2.png";
 
 const testimonials = [
   {
@@ -21,7 +24,7 @@ const testimonials = [
     name: "Person 1",
     designation: "Designation",
     feedback:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.",
     rating: 4,
     image: person1,
   },
@@ -65,7 +68,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="px-6 sm:px-12 pt-16 pb-6">
+    <section className="px-6 sm:px-12 py-16">
       {/* Heading */}
       <div className="text-center mb-12">
         <p className="text-blue-600 font-medium">Testimonials</p>
@@ -79,37 +82,46 @@ export default function Testimonials() {
         modules={[Pagination]}
         spaceBetween={30}
         slidesPerView={1}
-        grabCursor={true} // 👉 makes it draggable
         pagination={{ clickable: true }}
         breakpoints={{
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
-        className="pb-10" // reduced padding for dots
+        className="pb-12"
       >
         {testimonials.map((t) => (
           <SwiperSlide key={t.id}>
-            <div className="bg-white shadow-md rounded-lg p-6 flex flex-col gap-4 items-start">
+            <div className="bg-white shadow-md rounded-xl p-6 flex flex-col gap-4 h-full">
               {/* Profile */}
               <div className="flex items-center gap-3">
                 <Image
                   src={t.image}
                   alt={t.name}
-                  width={48}
-                  height={48}
+                  width={50}
+                  height={50}
                   className="rounded-full object-cover"
                 />
-                <div>
-                  <h4 className="font-semibold">{t.name}</h4>
+
+                <div className="w-full">
+                  {/* Name + Stars on same line */}
+                  <div className="flex items-center justify-between w-full">
+                    <h4 className="font-semibold">{t.name}</h4>
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Image
+                          key={i}
+                          src={i < t.rating ? starFilled : starOutline}
+                          alt="star"
+                          width={16}
+                          height={16}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Designation below */}
                   <p className="text-sm text-blue-600">{t.designation}</p>
                 </div>
-              </div>
-
-              {/* Rating */}
-              <div className="flex text-yellow-400">
-                {[...Array(5)].map((_, i) =>
-                  i < t.rating ? <FaStar key={i} /> : <FaRegStar key={i} />
-                )}
               </div>
 
               {/* Feedback */}
@@ -121,18 +133,20 @@ export default function Testimonials() {
         ))}
       </Swiper>
 
-      {/* Extra styling for dots */}
+      {/* Custom dots styling */}
       <style jsx global>{`
         .swiper-pagination {
-          bottom: 0 !important; /* 👈 keeps dots inside swiper, no extra white space */
+          bottom: 0 !important;
+          margin-top: 20px;
+          position: relative;
         }
         .swiper-pagination-bullet {
-          background: #94a3b8 !important; /* Tailwind slate-400 */
+          background: #94a3b8 !important; /* slate-400 */
           opacity: 0.6;
           transition: all 0.3s ease;
         }
         .swiper-pagination-bullet-active {
-          background: #facc15 !important; /* Tailwind yellow-400 */
+          background: #111 !important;
           opacity: 1;
           transform: scale(1.2);
         }

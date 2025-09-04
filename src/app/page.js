@@ -6,6 +6,7 @@ import ProjectsSection from "../components/homePage/ProjectSection";
 import WhyChooseUs from "../components/homePage/whychooseus";
 import Testimonials from "@/components/homePage/testimonails";
 import Calculation from "../components/homePage/calculation";
+import StatsSection from "@/components/homePage/statsection";
 import Image from "next/image";
 import { ImportExportOutlined } from "@mui/icons-material";
 import { Explora } from "next/font/google";
@@ -20,6 +21,7 @@ export default function Home() {
        <Calculation />
       <ProjectsSection />
       <WhyChooseUs />
+      <StatsSection />
       <Testimonials />
      
     </>
