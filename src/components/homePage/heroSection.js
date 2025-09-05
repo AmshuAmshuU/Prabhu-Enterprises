@@ -3,7 +3,6 @@
 import React from "react";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-import ChatIcon from "../../app/assets/icons/socialMedia/chat.svg";
 import HeroImage from "../../app/assets/images/homePage/hero.png";
 
 const Hero = () => {
@@ -26,27 +25,9 @@ const Hero = () => {
             }}
           >
             <Box
-              sx={{ position: "relative", width: "100%", textAlign: "center" }}
+              sx={{ width: "100%", textAlign: "center" }}
             >
               <Image src={HeroImage} alt="Hero" priority />
-              <Image
-                style={{
-                  position: "absolute",
-                  bottom: 16,
-                  right: 16,
-                  width: 48,
-                  height: 48,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  boxShadow: 3,
-                  cursor: "pointer",
-                }}
-                src={ChatIcon}
-                alt="Chat"
-                width={24}
-                height={24}
-              />
             </Box>
           </Grid>
           <Grid

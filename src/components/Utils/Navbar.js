@@ -15,6 +15,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import styles from "../../styles/navbar.module.css";
+import Link from "next/link";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -26,7 +27,14 @@ const Navbar = () => {
     <header
       className={`flex gap-10 items-center ${styles.navbar_container} px-5 py-4 boxShadow_000000 background_color_F2F2F2`}
     >
-      <Image src={logo} alt="logo" className="h-10 w-auto" />
+      <Link href={"/"}>
+        <Image
+          style={{ cursor: "pointer" }}
+          src={logo}
+          alt="logo"
+          className="h-10 w-auto"
+        />
+      </Link>
       <nav className="hidden lg:flex gap-8 items-center">
         {navbarPages.map((pages, index) => (
           <a key={index} href={pages.path} className="hover:text-blue-600">
@@ -99,11 +107,11 @@ const navbarPages = [
   },
   {
     name: "AboutUs",
-    path: "/",
+    path: "/aboutUs",
   },
   {
     name: "Services",
-    path: "/",
+    path: "/services",
   },
   {
     name: "Projects",
