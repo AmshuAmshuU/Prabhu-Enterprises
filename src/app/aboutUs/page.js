@@ -377,7 +377,8 @@ function TeamSection() {
                   ))}
                 </div>
               </div>
-            ))}
+            ))} 
+            
           </div>
         </div>
 
