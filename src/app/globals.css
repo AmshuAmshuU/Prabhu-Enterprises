@@ -24,3 +24,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.background_color_F2F2F2 {
+  background-color: #f2f2f2;
+}
+
+.boxShadow_000000 {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+}
+
+.background_color_F4C54F {
+  background-color: #F4C54F;
+}
