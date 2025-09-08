@@ -41,19 +41,36 @@ import milestone4 from "../assets/images/aboutUs/mile4.png";
 ===================== */
 const BannerSection = () => {
   return (
-    <section className="relative w-full h-[300px] md:h-[400px] lg:h-[450px] flex items-center justify-center px-4 sm:px-6 md:px-0">
-      <Image src={bannerBg} alt="About Us Banner" fill priority className="object-cover" />
+    <section className="relative w-full  h-[50vh] md:h-[60vh] lg:h-[55vh] flex items-center justify-center">
+      {/* Background Image */}
+      <Image
+        src={bannerBg}
+        alt="About Us Banner"
+        fill
+        priority
+        className="object-cover"
+      />
+
+      {/* Overlay */}
       <div className="absolute inset-0 bg-blue-900/50" />
-      <div className="relative text-center text-white">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2 text-black">About Us</h1>
+
+      {/* Content */}
+      <div className="relative text-center text-white px-4 sm:px-6 md:px-0 max-w-[1200px] mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2">
+          About Us
+        </h1>
         <p className="text-base sm:text-lg">
-          <span className="cursor-pointer hover:underline text-black font-bold">Home</span> /{" "}
+          <span className="cursor-pointer hover:underline text-black font-bold">
+            Home
+          </span>{" "}
+          /{" "}
           <span className="text-yellow-400 font-semibold">About Us</span>
         </p>
       </div>
     </section>
   );
 };
+
 
 
 /* =====================
@@ -196,6 +213,7 @@ const AboutSection = () => {
 /* =====================
    Vision/Mission/Value Section
 ===================== */
+
 const VisionMissionValue = () => {
   const cards = [
     {
@@ -203,60 +221,63 @@ const VisionMissionValue = () => {
       text: "To become one of the top multi-service enterprises in India, recognized for premium service quality, customer trust, and innovative solutions.",
       img: visionImg,
       bg: "bg-indigo-100",
-      reverse: false,
+      reverse: false, // image first
     },
     {
       title: "Our Mission",
       text: "To provide affordable, high-quality, and end-to-end solutions that improve lives, empower businesses, and create lasting value for our clients.",
       img: missionImg,
       bg: "bg-gray-100",
-      reverse: true,
+      reverse: true, // content first
     },
     {
       title: "Our Value",
       text: "Integrity in every project\nInnovation that drives results\nTransparency with clients and partners\nExcellence as a standard, not an option",
       img: valueImg,
       bg: "bg-indigo-100",
-      reverse: false,
+      reverse: false, // image first
     },
   ];
 
   return (
-    <section className="py-16 px-6 lg:px-20 space-y-14">
+    <section className="py-16 flex flex-col items-center space-y-14">
       {cards.map((card, index) => (
         <div
           key={index}
-          className={`${card.bg} w-full max-w-[1170px] h-auto rounded-[16px] shadow-lg p-6 lg:p-12 flex flex-col lg:flex-row ${
+          className={`${card.bg} relative w-full max-w-[1000px] rounded-[16px] shadow-lg overflow-hidden flex flex-col lg:flex-row ${
             card.reverse ? "lg:flex-row-reverse" : ""
-          } items-center lg:items-stretch gap-8 lg:gap-16 mx-auto`}
+          }`}
+          style={{ height: "300px" }} // desktop fixed height
         >
           {/* Image */}
-          <div className="w-full lg:w-1/2 flex justify-center">
-            <div className="relative w-full max-w-[500px] h-[300px] rounded-[16px] overflow-hidden shadow-md">
-              <Image
-                src={card.img}
-                alt={card.title}
-                fill
-                className="object-cover rounded-[16px]"
-                sizes="(max-width: 500px) 100vw, 50vw"
-              />
-            </div>
+          <div className="relative w-full h-[200px] lg:w-[400px] lg:h-[200px] lg:mt-[50px] lg:ml-[50px] lg:mr-[50px] flex-shrink-0">
+            <Image
+              src={card.img}
+              alt={card.title}
+              fill
+              className="object-contain lg:object-cover rounded-[16px]"
+            />
           </div>
 
           {/* Text */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 lg:mb-6">
-              {card.title}
-            </h2>
-            <p className="text-gray-800 whitespace-pre-line leading-relaxed text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
-              {card.text}
-            </p>
+          <div className="flex-1 flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-6 py-6 lg:px-0">
+            <div className="w-full lg:w-[400px]">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-2">
+                {card.title}
+              </h2>
+              <p className="text-gray-800 whitespace-pre-line leading-relaxed text-sm sm:text-base max-w-[90%] mx-auto lg:mx-0">
+                {card.text}
+              </p>
+            </div>
           </div>
         </div>
       ))}
     </section>
   );
 };
+
+
+
 
 /* =====================
    CTA Section
@@ -290,10 +311,6 @@ const CTASection = () => {
   );
 };
 
-
-/* =====================
-   Team Section
-===================== */
 /* =====================
    Team Section
 ===================== */
