@@ -2,22 +2,28 @@
 import Image from "next/image";
 import backgroundImage from "../assets/images/services/backGround.png";
 import whychoose from "../assets/images/services/whychoose.png";
-import {
-  FaTools,
-  FaTruck,
-  FaPaintRoller,
-  FaBullhorn,
-  FaCalendarAlt,
-  FaHome,
-  FaCheckCircle,
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa";
 
-import { Star } from "lucide-react";
+// Service icons (PNG)
+import BuildingConstructionIcon from "../assets/icons/socialMedia/Services/BuildingConstructionIcon.png";
+import LogisticsIcon from "../assets/icons/socialMedia/Services/LogisticsIcon.png";
+import InteriorExteriorDesigningIcon from "../assets/icons/socialMedia/Services/InteriorExteriorDesigning.png";
+import DigitalMarketingIcon from "../assets/icons/socialMedia/Services/digitalMarketingIcon.png";
+import EventManagementIcon from "../assets/icons/socialMedia/Services/eventManagementIcon.png";
+import RealEstateIcon from "../assets/icons/socialMedia/Services/realEstateIcon.png";
 
+// Social media icons (PNG)
+import FacebookIcon from "../assets/icons/socialMedia/Services/facebook.png";
+import TwitterIcon from "../assets/icons/socialMedia/Services/twitter.png";
+import InstagramIcon from "../assets/icons/socialMedia/Services/instagram.png";
+import LinkedinIcon from "../assets/icons/socialMedia/Services/linkedin.png";
+
+// Check & Stars & Dummy profile (PNG)
+import CheckIcon from "../assets/icons/socialMedia/Services/check.png";
+import StarIcon from "../assets/icons/socialMedia/Services/Star.png";
+import EmptyStarIcon from "../assets/icons/socialMedia/Services/emptyStar.png";
+import ProfileIcon from "../assets/icons/socialMedia/Services/profile.png";
+
+// Employee images (kept as in your project)
 import employee1 from "../assets/images/services/employee1.png";
 import employee2 from "../assets/images/services/employee2.png";
 import employee3 from "../assets/images/services/employee3.png";
@@ -27,32 +33,64 @@ import employee5 from "../assets/images/services/employee5.png";
 export default function Services() {
   const services = [
     {
-      icon: <FaTools className="w-8 h-8" />,
+      icon: (
+        <Image
+          src={BuildingConstructionIcon}
+          alt="Building Construction Icon"
+          width={32}
+          height={32}
+        />
+      ),
       title: "Building Construction & Materials",
       desc: "Reliable construction solutions with quality materials and expert execution.",
     },
     {
-      icon: <FaTruck className="w-8 h-8" />,
+      icon: (
+        <Image src={LogisticsIcon} alt="Logistics Icon" width={32} height={32} />
+      ),
       title: "Logistics & Transportation",
       desc: "Efficient delivery and supply chain support across all locations.",
     },
     {
-      icon: <FaPaintRoller className="w-8 h-8" />,
+      icon: (
+        <Image
+          src={InteriorExteriorDesigningIcon}
+          alt="Interior Exterior Designing Icon"
+          width={32}
+          height={32}
+        />
+      ),
       title: "Interior & Exterior Designing",
       desc: "Stylish, functional spaces designed to match your vision and lifestyle.",
     },
     {
-      icon: <FaBullhorn className="w-8 h-8" />,
+      icon: (
+        <Image
+          src={DigitalMarketingIcon}
+          alt="Digital Marketing Icon"
+          width={32}
+          height={32}
+        />
+      ),
       title: "Digital Marketing",
       desc: "Smart strategies to grow your brand and reach the right audience.",
     },
     {
-      icon: <FaCalendarAlt className="w-8 h-8" />,
+      icon: (
+        <Image
+          src={EventManagementIcon}
+          alt="Event Management Icon"
+          width={32}
+          height={32}
+        />
+      ),
       title: "Event Management",
       desc: "Seamless planning and execution for memorable events of any scale.",
     },
     {
-      icon: <FaHome className="w-8 h-8" />,
+      icon: (
+        <Image src={RealEstateIcon} alt="Real Estate Icon" width={32} height={32} />
+      ),
       title: "Real estate",
       desc: "Trusted guidance for buying, selling, or investing in properties.",
     },
@@ -76,7 +114,7 @@ export default function Services() {
       feedback:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       rating: 4,
-      image: "/images/person1.png", // replace with actual image path
+      image: ProfileIcon, // dummy profile used for all three
     },
     {
       name: "Person 2",
@@ -84,7 +122,7 @@ export default function Services() {
       feedback:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       rating: 5,
-      image: "/images/person2.png",
+      image: ProfileIcon,
     },
     {
       name: "Person 3",
@@ -92,7 +130,7 @@ export default function Services() {
       feedback:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       rating: 4,
-      image: "/images/person3.png",
+      image: ProfileIcon,
     },
   ];
 
@@ -160,8 +198,7 @@ export default function Services() {
           <div>
             <p className="text-blue-600 font-medium mb-3">Why Choose Us</p>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Built on trust,{" "}
-              <span className="text-blue-600">driven by excellence.</span>
+              Built on trust, <span className="text-blue-600">driven by excellence.</span>
             </h2>
             <p className="text-gray-600 mb-8">
               At Prabhu Enterprises, we go beyond delivering services — we
@@ -175,7 +212,7 @@ export default function Services() {
               {points.map((point, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <span className="flex items-center justify-center w-7 h-7 rounded-full bg-blue-600 text-white">
-                    <FaCheckCircle className="w-4 h-4" />
+                    <Image src={CheckIcon} alt="Check" width={16} height={16} />
                   </span>
                   <p className="text-gray-800">{point}</p>
                 </div>
@@ -241,10 +278,10 @@ export default function Services() {
                 <h3 className="mt-2 font-semibold">{`Employee ${idx + 1}`}</h3>
                 <p className="text-blue-600">Designation</p>
                 <div className="flex justify-center gap-4 mt-2 text-gray-500">
-                  <a href="#"><FaFacebookF /></a>
-                  <a href="#"><FaTwitter /></a>
-                  <a href="#"><FaInstagram /></a>
-                  <a href="#"><FaLinkedinIn /></a>
+                  <a href="#"><Image src={FacebookIcon} alt="Facebook" width={20} height={20} /></a>
+                  <a href="#"><Image src={TwitterIcon} alt="Twitter" width={20} height={20} /></a>
+                  <a href="#"><Image src={InstagramIcon} alt="Instagram" width={20} height={20} /></a>
+                  <a href="#"><Image src={LinkedinIcon} alt="LinkedIn" width={20} height={20} /></a>
                 </div>
               </div>
             )
@@ -268,9 +305,11 @@ export default function Services() {
               >
                 {/* Profile */}
                 <div className="flex items-center gap-4 mb-4">
-                  <img
+                  <Image
                     src={t.image}
                     alt={t.name}
+                    width={48}
+                    height={48}
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
@@ -282,13 +321,12 @@ export default function Services() {
                 {/* Rating */}
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
+                    <Image
                       key={i}
-                      className={`w-5 h-5 ${
-                        i < t.rating
-                          ? "text-yellow-400 fill-yellow-400"
-                          : "text-gray-300"
-                      }`}
+                      src={i < t.rating ? StarIcon : EmptyStarIcon}
+                      alt={i < t.rating ? "Star" : "Empty Star"}
+                      width={20}
+                      height={20}
                     />
                   ))}
                 </div>
