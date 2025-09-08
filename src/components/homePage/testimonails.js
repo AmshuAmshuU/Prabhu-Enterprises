@@ -90,8 +90,8 @@ export default function Testimonials() {
         className="pb-12"
       >
         {testimonials.map((t) => (
-          <SwiperSlide key={t.id}>
-            <div className="bg-white shadow-md rounded-xl p-6 flex flex-col gap-4 h-full">
+          <SwiperSlide key={t.id} className="flex">
+           <div className="bg-white shadow-md rounded-xl p-6 flex flex-col gap-4 h-[150px] flex-1">
               {/* Profile */}
               <div className="flex items-center gap-3">
                 <Image
@@ -125,10 +125,10 @@ export default function Testimonials() {
               </div>
 
               {/* Feedback */}
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {t.feedback}
-              </p>
-            </div>
+              <p className="text-gray-600 text-sm leading-relaxed overflow-hidden text-ellipsis line-clamp-5">
+    {t.feedback}
+  </p>
+</div>
           </SwiperSlide>
         ))}
       </Swiper>

@@ -18,64 +18,36 @@ import valueImg from "../assets/images/aboutUs/ourvalue.png";
 
 import bgImg from "../assets/images/aboutUs/aboutcta.png";
 
-// Team member images
-import member1 from "../assets/images/aboutUs/profile.png";
-import member2 from "../assets/images/aboutUs/profile.png";
-import member3 from "../assets/images/aboutUs/profile.png";
-import member4 from "../assets/images/aboutUs/profile.png";
-import member5 from "../assets/images/aboutUs/profile.png";
+// 👉 Team images
+import emp1 from "../assets/images/aboutUs/profile.png";
+import emp2 from "../assets/images/aboutUs/profile.png";
+import emp3 from "../assets/images/aboutUs/profile.png";
+import emp4 from "../assets/images/aboutUs/profile.png";
+import emp5 from "../assets/images/aboutUs/profile.png";
 
-// Social icons
-import facebookIcon from "../assets/icons/aboutUs/facebook.png";
-import twitterIcon from "../assets/icons/aboutUs/twitter.png";
-import instagramIcon from "../assets/icons/aboutUs/instagram.png";
-import linkedinIcon from "../assets/icons/aboutUs/linkedin.png";
+// 👉 Social icons
+import facebook from "../assets/icons/aboutUs/facebook.png";
+import twitter from "../assets/icons/aboutUs/instagram.png";
+import instagram from "../assets/icons/aboutUs/linkedin.png";
+import linkedin from "../assets/icons/aboutUs/twitter.png";
 
-const teamMembers = [
-  {
-    name: "Employee 1",
-    designation: "Designation",
-    image: member1,
-    socials: [facebookIcon, twitterIcon, instagramIcon, linkedinIcon],
-  },
-  {
-    name: "Employee 2",
-    designation: "Designation",
-    image: member2,
-    socials: [facebookIcon, twitterIcon, instagramIcon],
-  },
-  {
-    name: "Employee 3",
-    designation: "Designation",
-    image: member3,
-    socials: [facebookIcon, twitterIcon, instagramIcon, linkedinIcon],
-  },
-  {
-    name: "Employee 4",
-    designation: "Designation",
-    image: member4,
-    socials: [facebookIcon, twitterIcon, instagramIcon, linkedinIcon],
-  },
-  {
-    name: "Employee 5",
-    designation: "Designation",
-    image: member5,
-    socials: [facebookIcon, twitterIcon, instagramIcon],
-  },
-];
+import milestone1 from "../assets/images/aboutUs/mile1.png";
+import milestone2 from "../assets/images/aboutUs/mile2.png";
+import milestone3 from "../assets/images/aboutUs/mile3.png";
+import milestone4 from "../assets/images/aboutUs/mile4.png";
 
 /* =====================
     Banner Section
 ===================== */
 const BannerSection = () => {
   return (
-    <section className="relative w-full h-[300px] md:h-[400px] lg:h-[450px] flex items-center justify-center">
+    <section className="relative w-full h-[300px] md:h-[400px] lg:h-[450px] flex items-center justify-center px-4 sm:px-6 md:px-0">
       <Image src={bannerBg} alt="About Us Banner" fill priority className="object-cover" />
       <div className="absolute inset-0 bg-blue-900/50" />
       <div className="relative text-center text-white">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-2">About Us</h1>
-        <p className="text-lg">
-          <span className="cursor-pointer hover:underline">Home</span> /{" "}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2 text-black">About Us</h1>
+        <p className="text-base sm:text-lg">
+          <span className="cursor-pointer hover:underline text-black font-bold">Home</span> /{" "}
           <span className="text-yellow-400 font-semibold">About Us</span>
         </p>
       </div>
@@ -83,8 +55,9 @@ const BannerSection = () => {
   );
 };
 
+
 /* =====================
-    About Section
+   About Section
 ===================== */
 const AboutSection = () => {
   return (
@@ -149,12 +122,12 @@ const AboutSection = () => {
               </Box>
             </Typography>
 
-            <Typography variant="body2" sx={{ mb: 1, color: "#555", fontSize: "0.9rem" }}>
+            <Typography variant="body2" sx={{ mb: 1, color: "#555", fontSize: { xs: "0.85rem", sm: "0.9rem" } }}>
               Prabhu Enterprises is a multi-service company offering construction, interiors, events,
               real estate, logistics, digital marketing, and home appliances.
             </Typography>
 
-            <Typography variant="body2" sx={{ mb: 2, color: "#555", fontSize: "0.9rem" }}>
+            <Typography variant="body2" sx={{ mb: 2, color: "#555", fontSize: { xs: "0.85rem", sm: "0.9rem" } }}>
               Our goal is simple — to provide seamless, affordable, and premium services that
               transform ideas into lasting results across India.
             </Typography>
@@ -191,7 +164,7 @@ const AboutSection = () => {
                 <Typography sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", sm: "1.7rem", md: "2rem" } }}>
                   <CountUp end={500} duration={3} />+
                 </Typography>
-                <Typography variant="body2" sx={{ color: "#555", fontSize: "0.8rem" }}>
+                <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "0.75rem", sm: "0.8rem" } }}>
                   Satisfied Customers
                 </Typography>
               </Box>
@@ -199,7 +172,7 @@ const AboutSection = () => {
                 <Typography sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", sm: "1.7rem", md: "2rem" } }}>
                   <CountUp end={10} duration={3} />+
                 </Typography>
-                <Typography variant="body2" sx={{ color: "#555", fontSize: "0.8rem" }}>
+                <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "0.75rem", sm: "0.8rem" } }}>
                   Years Experience
                 </Typography>
               </Box>
@@ -207,7 +180,7 @@ const AboutSection = () => {
                 <Typography sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", sm: "1.7rem", md: "2rem" } }}>
                   <CountUp end={40} duration={3} />+
                 </Typography>
-                <Typography variant="body2" sx={{ color: "#555", fontSize: "0.8rem" }}>
+                <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "0.75rem", sm: "0.8rem" } }}>
                   Projects Completed
                 </Typography>
               </Box>
@@ -219,8 +192,9 @@ const AboutSection = () => {
   );
 };
 
+
 /* =====================
-  Vision/Mission/Value Section
+   Vision/Mission/Value Section
 ===================== */
 const VisionMissionValue = () => {
   const cards = [
@@ -252,21 +226,31 @@ const VisionMissionValue = () => {
       {cards.map((card, index) => (
         <div
           key={index}
-          className={`${card.bg} w-[1170px] h-[400px] rounded-[16px] opacity-100 shadow-lg p-6 lg:p-12 flex flex-col lg:flex-row ${
+          className={`${card.bg} w-full max-w-[1170px] h-auto rounded-[16px] shadow-lg p-6 lg:p-12 flex flex-col lg:flex-row ${
             card.reverse ? "lg:flex-row-reverse" : ""
-          } items-center lg:items-stretch gap-10 lg:gap-16 mx-auto`}
+          } items-center lg:items-stretch gap-8 lg:gap-16 mx-auto`}
         >
           {/* Image */}
-          <div className="w-full lg:w-1/2 flex">
-            <div className="relative w-[500px] h-[300px] rounded-[16px] overflow-hidden shadow-md">
-              <Image src={card.img} alt={card.title} fill className="object-cover rounded-[16px]" sizes="(max-width: 500px) 100vw, 50vw" />
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <div className="relative w-full max-w-[500px] h-[300px] rounded-[16px] overflow-hidden shadow-md">
+              <Image
+                src={card.img}
+                alt={card.title}
+                fill
+                className="object-cover rounded-[16px]"
+                sizes="(max-width: 500px) 100vw, 50vw"
+              />
             </div>
           </div>
 
           {/* Text */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center text-left lg:text-center">
-            <h2 className="text-5xl font-extrabold text-gray-900 mb-6">{card.title}</h2>
-            <p className="text-gray-800 whitespace-pre-line leading-relaxed text-lg max-w-xl mx-auto lg:mx-0">{card.text}</p>
+          <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 lg:mb-6">
+              {card.title}
+            </h2>
+            <p className="text-gray-800 whitespace-pre-line leading-relaxed text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
+              {card.text}
+            </p>
           </div>
         </div>
       ))}
@@ -279,117 +263,193 @@ const VisionMissionValue = () => {
 ===================== */
 const CTASection = () => {
   return (
-    <section
-      className="relative overflow-hidden mx-auto my-16"
-      style={{
-        width: "1173px",
-        height: "393px",
-        borderRadius: "16px",
-        opacity: 1,
-      }}
-    >
-      <Image src={bgImg} alt="CTA Background" fill className="object-cover" priority />
-      <div className="relative text-center text-white h-full flex flex-col items-center justify-center px-6">
-        <h2 className="text-[28px] font-extrabold mb-4">Request a Customized Solution for Your Business!</h2>
-        <p className="text-base mb-6 max-w-2xl">
-          Every business is unique. Request a tailored solution crafted specifically for your organization’s challenges and goals.
-        </p>
-        <button className="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-md hover:bg-yellow-500 transition">CONTACT US</button>
+    <section className="relative overflow-hidden mx-auto my-12 w-full px-4 sm:px-6 lg:px-8 max-w-[1173px] rounded-[16px]">
+      <div className="relative w-full h-[250px] sm:h-[320px] md:h-[393px] rounded-[16px] overflow-hidden">
+        {/* Background Image */}
+        <Image
+          src={bgImg}
+          alt="CTA Background"
+          fill
+          className="object-cover rounded-[16px]"
+          priority
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40 rounded-[16px]" />
+        {/* Content */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-12 text-white max-w-[900px] mx-auto">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-[28px] font-extrabold mb-3 sm:mb-4">
+            Request a Customized Solution for Your Business!
+          </h2>
+          <p className="text-sm sm:text-base md:text-lg mb-4 sm:mb-6">
+            Every business is unique. Request a tailored solution crafted specifically for your organization’s challenges and goals.
+          </p>
+          <button className="bg-yellow-400 text-black font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-yellow-500 transition text-sm sm:text-base">
+            CONTACT US
+          </button>
+        </div>
       </div>
     </section>
   );
 };
 
+
 /* =====================
    Team Section
 ===================== */
-function TeamSection() {
+const TeamSection = () => {
+  const employees = [
+    { id: 1, name: "Employee 1", designation: "Designation", img: emp1 },
+    { id: 2, name: "Employee 2", designation: "Designation", img: emp2 },
+    { id: 3, name: "Employee 3", designation: "Designation", img: emp3 },
+    { id: 4, name: "Employee 4", designation: "Designation", img: emp4 },
+    { id: 5, name: "Employee 5", designation: "Designation", img: emp5 },
+  ];
+
+  const socials = [facebook, twitter, instagram, linkedin];
+
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-3 gap-12">
-        
-        {/* LEFT SIDE - Text */}
-        <div className="lg:col-span-1">
-          <p className="text-blue-500 font-medium">Our Team</p>
-          <h2 className="text-3xl font-bold leading-snug">
-            Meet Our <span className="text-blue-600">Smart People.</span>
-          </h2>
-          <p className="mt-4 text-gray-600">
-            Behind every successful project is a passionate and skilled team.
-            Led by our founder, T. Jaya Prabhu, our workforce brings together
-            expertise across engineering, design, logistics, events, marketing,
-            and customer care — working as one to deliver seamless experiences.
-          </p>
+    <section className="py-16 px-4 sm:px-6 lg:px-20">
+      <div className="max-w-[1280px] mx-auto"> {/* Constrains width for ultra-wide screens */}
+
+        {/* Row 1 */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start justify-items-center">
+          {/* Left Content */}
+          <div className="w-full">
+            <p className="text-sm text-gray-500">Our Team</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mt-2">
+              Meet Our <span className="text-blue-600">Smart People.</span>
+            </h2>
+            <p className="mt-4 text-gray-600 text-sm sm:text-base leading-relaxed">
+              Behind every successful project is a passionate and skilled team. Led by our founder, T.
+              Jaya Prabhu, our workforce brings together expertise across engineering, design,
+              logistics, events, marketing, and customer care — working as one to deliver seamless
+              experiences.
+            </p>
+          </div>
+
+          {/* Employee 1 & 2 */}
+          {employees.slice(0, 2).map((emp) => (
+            <div key={emp.id} className="text-center w-full max-w-full sm:max-w-[300px]">
+              <div className="relative w-full pb-[100%]">
+                <Image
+                  src={emp.img}
+                  alt={emp.name}
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+              <div className="flex items-center justify-between mt-4 px-2">
+                <div className="text-left">
+                  <h3 className="font-semibold">{emp.name}</h3>
+                  <p className="text-blue-600 text-sm">{emp.designation}</p>
+                </div>
+                <div className="flex gap-3">
+                  {socials.map((icon, i) => (
+                    <Image key={i} src={icon} alt="social" width={20} height={20} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* RIGHT SIDE - Profiles */}
-        <div className="lg:col-span-2">
-          {/* First row - 2 profiles */}
-          <div className="grid grid-cols-2 gap-8 justify-center">
-            {teamMembers.slice(0, 2).map((member, index) => (
-              <div key={index} className="text-center">
-                <div className="overflow-hidden rounded-lg bg-gray-100 w-[200px] h-[200px] mx-auto">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={200}
-                    height={200}
-                    className="w-full h-full object-cover rounded-lg"
-                  />
+        {/* Row 2 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12 justify-items-center">
+          {employees.slice(2).map((emp) => (
+            <div key={emp.id} className="text-center w-full max-w-full sm:max-w-[300px]">
+              <div className="relative w-full pb-[100%]">
+                <Image
+                  src={emp.img}
+                  alt={emp.name}
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+              <div className="flex items-center justify-between mt-4 px-2">
+                <div className="text-left">
+                  <h3 className="font-semibold">{emp.name}</h3>
+                  <p className="text-blue-600 text-sm">{emp.designation}</p>
                 </div>
-                <h3 className="mt-3 font-semibold text-base">{member.name}</h3>
-                <p className="text-sm text-blue-600">{member.designation}</p>
-
-                {/* Social Icons */}
-                <div className="flex justify-center gap-3 mt-2">
-                  {member.socials.map((icon, i) => (
-                    <a key={i} href="#">
-                      <Image src={icon} alt="social icon" width={16} height={16} />
-                    </a>
+                <div className="flex gap-3">
+                  {socials.map((icon, i) => (
+                    <Image key={i} src={icon} alt="social" width={20} height={20} />
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* Second row - 3 profiles */}
-          <div className="grid grid-cols-3 gap-8 mt-10">
-            {teamMembers.slice(2).map((member, index) => (
-              <div key={index} className="text-center">
-                <div className="overflow-hidden rounded-lg bg-gray-100 w-[200px] h-[200px] mx-auto">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={200}
-                    height={200}
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                </div>
-                <h3 className="mt-3 font-semibold text-base">{member.name}</h3>
-                <p className="text-sm text-blue-600">{member.designation}</p>
-
-                {/* Social Icons */}
-                <div className="flex justify-center gap-3 mt-2">
-                  {member.socials.map((icon, i) => (
-                    <a key={i} href="#">
-                      <Image src={icon} alt="social icon" width={16} height={16} />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            ))} 
-            
-          </div>
+            </div>
+          ))}
         </div>
 
       </div>
     </section>
   );
-}
+};
+
+
+
+const milestones = [
+  {
+    id: 1,
+    image: milestone1,
+    title: "10+ years of proven industry experience",
+  },
+  {
+    id: 2,
+    image: milestone2,
+    title: "500+ projects delivered successfully",
+  },
+  {
+    id: 3,
+    image: milestone3,
+    title: "PAN India presence with local support",
+  },
+  {
+    id: 4,
+    image: milestone4,
+    title: "Recognized ISO-certified company",
+  },
+];
+
+const MilestonesSection = () => {
+  return (
+    <section className="px-6 sm:px-12 py-16 bg-white">
+      {/* Heading */}
+      <div className="text-center mb-12">
+        <p className="text-blue-600 font-medium">Achievements</p>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-black">
+          Milestones We’re Proud Of
+        </h2>
+        <p className="text-gray-600 mt-2">
+          Delivering consistent excellence across India for over a decade.
+        </p>
+      </div>
+
+      {/* Milestones Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center">
+        {milestones.map((m) => (
+          <div key={m.id} className="text-center w-full max-w-[500px]">
+            <div className="relative h-70 w-full aspect-[5/2]">
+              <Image
+                src={m.image}
+                alt={m.title}
+                fill
+                className="object-cover rounded-xl"
+              />
+            </div>
+            <p className="mt-4 font-semibold text-black text-center">
+              {m.title}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 
 
 /* =====================
-    About Page
+   About Page
 ===================== */
 export default function AboutPage() {
   return (
@@ -399,6 +459,9 @@ export default function AboutPage() {
       <VisionMissionValue />
       <CTASection />
       <TeamSection />
+      <MilestonesSection /> {/* ✅ just add here */}
     </>
   );
 }
+
+
