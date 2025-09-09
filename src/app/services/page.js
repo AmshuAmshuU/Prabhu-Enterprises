@@ -1,5 +1,6 @@
 // src/app/services/page.js
 import Image from "next/image";
+import Link from "next/link"; // ✅ Added for routing
 import backgroundImage from "../assets/images/services/backGround.png";
 import whychoose from "../assets/images/services/whychoose.png";
 
@@ -33,64 +34,38 @@ import employee5 from "../assets/images/services/employee5.png";
 export default function Services() {
   const services = [
     {
-      icon: (
-        <Image
-          src={BuildingConstructionIcon}
-          alt="Building Construction Icon"
-          width={32}
-          height={32}
-        />
-      ),
+      id: 1,
+      icon: <Image src={BuildingConstructionIcon} alt="Building Construction Icon" width={32} height={32} />,
       title: "Building Construction & Materials",
       desc: "Reliable construction solutions with quality materials and expert execution.",
     },
     {
-      icon: (
-        <Image src={LogisticsIcon} alt="Logistics Icon" width={32} height={32} />
-      ),
+      id: 2,
+      icon: <Image src={LogisticsIcon} alt="Logistics Icon" width={32} height={32} />,
       title: "Logistics & Transportation",
       desc: "Efficient delivery and supply chain support across all locations.",
     },
     {
-      icon: (
-        <Image
-          src={InteriorExteriorDesigningIcon}
-          alt="Interior Exterior Designing Icon"
-          width={32}
-          height={32}
-        />
-      ),
+      id: 3,
+      icon: <Image src={InteriorExteriorDesigningIcon} alt="Interior Exterior Designing Icon" width={32} height={32} />,
       title: "Interior & Exterior Designing",
       desc: "Stylish, functional spaces designed to match your vision and lifestyle.",
     },
     {
-      icon: (
-        <Image
-          src={DigitalMarketingIcon}
-          alt="Digital Marketing Icon"
-          width={32}
-          height={32}
-        />
-      ),
+      id: 4,
+      icon: <Image src={DigitalMarketingIcon} alt="Digital Marketing Icon" width={32} height={32} />,
       title: "Digital Marketing",
       desc: "Smart strategies to grow your brand and reach the right audience.",
     },
     {
-      icon: (
-        <Image
-          src={EventManagementIcon}
-          alt="Event Management Icon"
-          width={32}
-          height={32}
-        />
-      ),
+      id: 5,
+      icon: <Image src={EventManagementIcon} alt="Event Management Icon" width={32} height={32} />,
       title: "Event Management",
       desc: "Seamless planning and execution for memorable events of any scale.",
     },
     {
-      icon: (
-        <Image src={RealEstateIcon} alt="Real Estate Icon" width={32} height={32} />
-      ),
+      id: 6,
+      icon: <Image src={RealEstateIcon} alt="Real Estate Icon" width={32} height={32} />,
       title: "Real estate",
       desc: "Trusted guidance for buying, selling, or investing in properties.",
     },
@@ -167,25 +142,22 @@ export default function Services() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-start gap-4 bg-transparent"
-            >
+          {services.map((service) => (
+            <div key={service.id} className="flex flex-col items-start gap-4 bg-transparent">
               <div className="p-2 rounded-md bg-white border border-gray-100 shadow-sm">
                 {service.icon}
               </div>
 
-              <h3 className="text-lg font-semibold text-gray-900">
-                {service.title}
-              </h3>
+              <h3 className="text-lg font-semibold text-gray-900">{service.title}</h3>
               <p className="text-gray-600">{service.desc}</p>
-              <a
-                href="#"
+
+              {/* ✅ Updated Learn More button */}
+              <Link
+                href={`/servicedetails/${service.id}`}
                 className="text-blue-600 font-medium hover:underline flex items-center gap-1"
               >
                 Learn More →
-              </a>
+              </Link>
             </div>
           ))}
         </div>
@@ -263,29 +235,27 @@ export default function Services() {
           </div>
 
           {/* Employee Cards */}
-          {[employee1, employee2, employee3, employee4, employee5].map(
-            (emp, idx) => (
-              <div key={idx} className="text-center">
-                <div className="rounded-lg overflow-hidden shadow-md mb-4">
-                  <Image
-                    src={emp}
-                    alt={`Employee ${idx + 1}`}
-                    width={380}
-                    height={260}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <h3 className="mt-2 font-semibold">{`Employee ${idx + 1}`}</h3>
-                <p className="text-blue-600">Designation</p>
-                <div className="flex justify-center gap-4 mt-2 text-gray-500">
-                  <a href="#"><Image src={FacebookIcon} alt="Facebook" width={20} height={20} /></a>
-                  <a href="#"><Image src={TwitterIcon} alt="Twitter" width={20} height={20} /></a>
-                  <a href="#"><Image src={InstagramIcon} alt="Instagram" width={20} height={20} /></a>
-                  <a href="#"><Image src={LinkedinIcon} alt="LinkedIn" width={20} height={20} /></a>
-                </div>
+          {[employee1, employee2, employee3, employee4, employee5].map((emp, idx) => (
+            <div key={idx} className="text-center">
+              <div className="rounded-lg overflow-hidden shadow-md mb-4">
+                <Image
+                  src={emp}
+                  alt={`Employee ${idx + 1}`}
+                  width={380}
+                  height={260}
+                  className="object-cover w-full h-full"
+                />
               </div>
-            )
-          )}
+              <h3 className="mt-2 font-semibold">{`Employee ${idx + 1}`}</h3>
+              <p className="text-blue-600">Designation</p>
+              <div className="flex justify-center gap-4 mt-2 text-gray-500">
+                <a href="#"><Image src={FacebookIcon} alt="Facebook" width={20} height={20} /></a>
+                <a href="#"><Image src={TwitterIcon} alt="Twitter" width={20} height={20} /></a>
+                <a href="#"><Image src={InstagramIcon} alt="Instagram" width={20} height={20} /></a>
+                <a href="#"><Image src={LinkedinIcon} alt="LinkedIn" width={20} height={20} /></a>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -332,9 +302,7 @@ export default function Services() {
                 </div>
 
                 {/* Feedback */}
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {t.feedback}
-                </p>
+                <p className="text-gray-600 text-sm leading-relaxed">{t.feedback}</p>
               </div>
             ))}
           </div>
