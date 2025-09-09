@@ -1,0 +1,8 @@
+.navbar_container {
+  justify-content: center;
+}
+@media (max-width: 1024px) {
+  .navbar_container {
+    justify-content: space-between;
+  }
+}
