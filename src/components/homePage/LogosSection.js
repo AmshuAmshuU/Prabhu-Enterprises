@@ -5,11 +5,11 @@ import { Box, Container, Grid } from "@mui/material";
 import Image from "next/image";
 
 // Import logos directly
-import logo1 from "../../assets/Images/logo1.png";
-import logo2 from "../../assets/Images/logo2.png";
-import logo3 from "../../assets/Images/logo3.png";
-import logo4 from "../../assets/Images/logo4.png";
-import logo5 from "../../assets/Images/logo5.png";
+import logo1 from "../../assets/Images/homepage/logo1.png";
+import logo2 from "../../assets/Images/homepage/logo2.png";
+import logo3 from "../../assets/Images/homepage/logo3.png";
+import logo4 from "../../assets/Images/homepage/logo4.png";
+import logo5 from "../../assets/Images/homepage/logo5.png";
 
 const logos = [logo1, logo2, logo3, logo4, logo5];
 

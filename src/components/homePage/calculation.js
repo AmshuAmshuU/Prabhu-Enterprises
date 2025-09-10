@@ -1,5 +1,5 @@
 "use client";
-import bgImg from "../../assets/Images/aboutcta.png"; // Replace with your actual image
+import bgImg from "../../assets/Images/homepage/aboutcta.png"; // Replace with your actual image
 
 export default function EstimateSection() {
   return (

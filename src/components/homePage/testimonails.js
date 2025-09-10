@@ -8,11 +8,11 @@ import "swiper/css/pagination";
 import Image from "next/image";
 
 // 👉 Import profile images
-import person1 from "../../assets/Images/profile.png";
-import person2 from "../../assets/Images/profile.png";
-import person3 from "../../assets/Images/profile.png";
-import person4 from "../../assets/Images/profile.png";
-import person5 from "../../assets/Images/profile.png";
+import person1 from "../../assets/Images/homepage/profile.png";
+import person2 from "../../assets/Images/homepage/profile.png";
+import person3 from "../../assets/Images/homepage/profile.png";
+import person4 from "../../assets/Images/homepage/profile.png";
+import person5 from "../../assets/Images/homepage/profile.png";
 
 // 👉 Import star icons
 import starFilled from "../../assets/icons/starticon.png";

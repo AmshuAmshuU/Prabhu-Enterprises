@@ -3,10 +3,10 @@
 import Image from "next/image";
 
 // 👉 Import images (replace with your actual paths in assets/images)
-import project1 from "../../assets/Images/project1.png";
-import project2 from "../../assets/Images/project2.png";
-import project3 from "../../assets/Images/project3.png";
-import project4 from "../../assets/Images/project4.png";
+import project1 from "../../assets/Images/homepage/project1.png";
+import project2 from "../../assets/Images/homepage/project2.png";
+import project3 from "../../assets/Images/homepage/project3.png";
+import project4 from "../../assets/Images/homepage/project4.png";
 // Array of projects
 const projects = [
   {

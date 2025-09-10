@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 // 👉 Import image
-import officeImg from "../../assets/Images/whyus.png";
+import officeImg from "../../assets/Images/homepage/whyus.png";
 
 const features = [
   "Proven Experience",
