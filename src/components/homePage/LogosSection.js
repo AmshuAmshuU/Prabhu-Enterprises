@@ -35,8 +35,8 @@ const LogoSection = () => {
               <Image
                 src={logo}
                 alt={`Logo ${index + 1}`}
-                width={120}
-                height={40}
+                width={130}
+                height={50}
                 style={{
                   filter: "grayscale(100%)",
                   opacity: 0.8,
